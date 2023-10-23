@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Pessoas, Processos
+
+admin.site.register(Pessoas)
+admin.site.register(Processos)
