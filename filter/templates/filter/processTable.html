@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %} Tabela {% endblock %}
+<!---->
+{% block content%}
+<h1>Lista de Processos</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Advogado</th>
+      <th>Cliente</th>
+      <th>Número do Processo</th>
+      <th>Próximo Prazo</th>
+      <th>Arquivo</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for processo in processList %}
+    <tr>
+      <td>{{ processo.id }}</td>
+      <td>{{ processo.advogado_id.nome }}</td>
+      <td>{{ processo.cliente_id.nome }}</td>
+      <td>{{ processo.numero_processo }}</td>
+      <td>{{ processo.proximo_prazo }}</td>
+      <td>{{ processo.arquivo }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
