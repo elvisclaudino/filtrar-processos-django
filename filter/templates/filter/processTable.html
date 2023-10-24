@@ -1,30 +1,52 @@
-{% extends "base.html" %} {% block title %} Tabela {% endblock %}
+{% extends "base.html" %}
+<!---->
+{% block title %} Tabela - Página {{ processos.number }} {% endblock %}
 <!---->
 {% block content%}
-<h1>Lista de Processos</h1>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Advogado</th>
-      <th>Cliente</th>
-      <th>Número do processo</th>
-      <th>Próximo prazo</th>
-      <th>Arquivo</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for processo in processos %}
-    <tr>
-      <td>{{ processo.id }}</td>
-      <td>{{ processo.advogado.nome }}</td>
-      <td>{{ processo.cliente.nome }}</td>
-      <td>{{ processo.numero_processo }}</td>
-      <td>{{ processo.proximo_prazo }}</td>
-      <td>{{ processo.arquivo }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<div class="table-responsive container">
+  <table class="table caption-top rounded-6">
+    <caption>
+      Lista de processos
+    </caption>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Advogado</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Número do processo</th>
+        <th scope="col">Próximo prazo</th>
+        <th scope="col">Arquivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for processo in processos %}
+      <tr>
+        <td scope="row">{{ processo.id }}</td>
+        <td>{{ processo.advogado.nome }}</td>
+        <td>{{ processo.cliente.nome }}</td>
+        <td>{{ processo.numero_processo }}</td>
+        <td>{{ processo.proximo_prazo }}</td>
+        <td>{{ processo.arquivo }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="pagination">
+    <span class="step-links">
+      {% if processos.has_previous %}
+      <a href="?page={{ processos.previous_page_number }}"
+        ><i class="fa fa-arrow-left"></i></a
+      >{% endif %}
+      <!---->
+      <span class="current">
+        {{ processos.number }} de {{ processos.paginator.num_pages }}</span
+      >
+      {% if processos.has_next %}
+      <a href="?page={{ processos.next_page_number }}"
+        ><i class="fa fa-arrow-right"></i></a
+      >{% endif %}
+    </span>
+  </div>
+</div>
 
 {% endblock %}

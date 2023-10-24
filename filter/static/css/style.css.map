@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../sass/style.scss"],"names":[],"mappings":"AAAQ;AACA","file":"style.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/style.scss","../sass/common-elements.scss","../sass/pages/processTable.scss"],"names":[],"mappings":";AAAQ;AACA;ACDR;EACE;;;ACDF;AAEA;EACE;;;AAGF;AAEA;EACE;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;AAAA;EAEE","file":"style.css"}
