@@ -7,7 +7,7 @@ def home(request):
     return render(request, 'filter/home.html') # Renderiza a página inicial
 
 def processTable(request):
-    lista_processos = Processos.objects.all().order_by("id") # Salava todos os processos em uma lista e ordena por id
+    lista_processos = Processos.objects.all().order_by("proximo_prazo") # Salava todos os processos em uma lista e ordena por id
     paginator = Paginator(lista_processos, 10) # Mostra apenas 10 processos por página
     page = request.GET.get("page") # Pega o número da página
     processos = paginator.get_page(page) # Pega os processos da página

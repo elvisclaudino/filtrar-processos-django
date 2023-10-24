@@ -7,7 +7,6 @@
   <table class="table">
     <thead class="table-dark">
       <tr>
-        <th scope="col">ID</th>
         <th scope="col">Advogado</th>
         <th scope="col">Cliente</th>
         <th scope="col">Número do processo</th>
@@ -19,11 +18,11 @@
       <!-- Loop para mostrar os processos na tabela -->
       {% for processo in processos %}
       <tr>
-        <td scope="row">{{ processo.id }}</td>
-        <td>{{ processo.advogado.nome }}</td>
+        <td scope="row">{{ processo.advogado.nome }}</td>
         <td>{{ processo.cliente.nome }}</td>
         <td>{{ processo.numero_processo }}</td>
-        <td>{{ processo.proximo_prazo }}</td>
+        <td>{{ processo.proximo_prazo|date:"d/m/Y H:i" }}</td>
+        <!-- Formata a data -->
         <td>{{ processo.arquivo }}</td>
       </tr>
       {% endfor %}
