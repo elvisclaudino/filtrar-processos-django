@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-<!---->
+<!-- Título -->
 {% block title %} Tabela - Página {{ processos.number }} {% endblock %}
-<!---->
+<!-- Conteúdo -->
 {% block content%}
 <div class="table-responsive container process-table">
   <table class="table">
@@ -16,6 +16,7 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Loop para mostrar os processos na tabela -->
       {% for processo in processos %}
       <tr>
         <td scope="row">{{ processo.id }}</td>
@@ -30,14 +31,16 @@
   </table>
   <div class="pagination">
     <span class="step-links">
+      <!-- Verifica se há uma página anterior -->
       {% if processos.has_previous %}
       <a href="?page={{ processos.previous_page_number }}"
         ><i class="fa fa-arrow-left"></i></a
       >{% endif %}
-      <!---->
+      <!-- Mostra a página -->
       <span class="current">
         {{ processos.number }} de {{ processos.paginator.num_pages }}</span
       >
+      <!-- Verifica se há uma próxima página -->
       {% if processos.has_next %}
       <a href="?page={{ processos.next_page_number }}"
         ><i class="fa fa-arrow-right"></i></a

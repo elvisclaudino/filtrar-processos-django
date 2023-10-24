@@ -29,7 +29,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{% static "../static/css/style.css" %}">
   </head>
+
   <body>
+    <!-- Aba de navegação -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <button
@@ -55,18 +57,20 @@
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Gerar relatório</a>
+              <a class="nav-link" href="">Gerar relatório</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Todos os processos</a>
+              <a class="nav-link" href="/processos">Todos os processos</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
+    <!-- Conteúdo principal -->
     <main class="main-content">{% block content %} {% endblock %}</main>
 
+    <!-- Rodapé -->
     <footer class="text-center text-white" style="background-color: #003364">
       <div class="container p-4">
         <section class="mb-4">
@@ -100,7 +104,7 @@
       </div>
     </footer>
 
-    <!-- MDB -->
+    <!-- MDB script -->
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
