@@ -8,17 +8,17 @@
       <th>ID</th>
       <th>Advogado</th>
       <th>Cliente</th>
-      <th>Número do Processo</th>
-      <th>Próximo Prazo</th>
+      <th>Número do processo</th>
+      <th>Próximo prazo</th>
       <th>Arquivo</th>
     </tr>
   </thead>
   <tbody>
-    {% for processo in processList %}
+    {% for processo in processos %}
     <tr>
       <td>{{ processo.id }}</td>
-      <td>{{ processo.advogado_id.nome }}</td>
-      <td>{{ processo.cliente_id.nome }}</td>
+      <td>{{ processo.advogado.nome }}</td>
+      <td>{{ processo.cliente.nome }}</td>
       <td>{{ processo.numero_processo }}</td>
       <td>{{ processo.proximo_prazo }}</td>
       <td>{{ processo.arquivo }}</td>
@@ -26,4 +26,5 @@
     {% endfor %}
   </tbody>
 </table>
+
 {% endblock %}

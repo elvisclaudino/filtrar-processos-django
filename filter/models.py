@@ -2,7 +2,7 @@ from django.db import models
 
 class Pessoas(models.Model):
     nome = models.CharField(max_length=128)
-    cliente = models.IntegerField()
+    cliente = models.BooleanField()
     cpf_cnpj = models.CharField(max_length=20, blank=True, null=True)
     endereço = models.CharField(max_length=128, blank=True, null=True)
     email = models.CharField(max_length=128, blank=True, null=True)
@@ -16,11 +16,12 @@ class Pessoas(models.Model):
 
 
 class Processos(models.Model):
-    advogado_id = models.IntegerField()
-    cliente_id = models.IntegerField()
+    advogado = models.ForeignKey(Pessoas, on_delete=models.DO_NOTHING, related_name='advogado_processos', db_column='advogado_id')  # Use ForeignKey to establish the relation
+    cliente = models.ForeignKey(Pessoas, on_delete=models.DO_NOTHING, related_name='cliente_processos', db_column='cliente_id')  # Use ForeignKey to establish the relation
     numero_processo = models.CharField(max_length=35)
     proximo_prazo = models.DateTimeField()
-    arquivo = models.IntegerField()
+    arquivo = models.BooleanField()
+
 
     class Meta:
         managed = False
