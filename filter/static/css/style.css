@@ -7,6 +7,7 @@
 
 .main-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 94vh;
@@ -17,6 +18,11 @@
     height: 800px;
   }
 }
+/* Filtro de processos */
+.btn-primary {
+  --mdb-btn-bg: #003364;
+}
+
 /* Tabela de processos */
 .table-dark {
   --mdb-table-bg: #003364;
@@ -52,6 +58,18 @@
 @media (max-width: 1200px) {
   .process-table {
     height: 80%;
+    width: 90%;
+  }
+  .table-search {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .table-search #search-form {
+    width: 90%;
+  }
+  .table-search #search-btn {
+    width: 90%;
   }
 }
 

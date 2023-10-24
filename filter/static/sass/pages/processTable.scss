@@ -1,3 +1,8 @@
+/* Filtro de processos */
+.btn-primary {
+  --mdb-btn-bg: #003364;
+}
+
 /* Tabela de processos */
 
 .table-dark {
@@ -35,5 +40,20 @@
 @media (max-width: 1200px) {
   .process-table {
     height: 80%;
+    width: 90%;
+  }
+
+  .table-search {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #search-form {
+      width: 90%;
+    }
+
+    #search-btn {
+      width: 90%;
+    }
   }
 }

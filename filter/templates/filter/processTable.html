@@ -3,6 +3,24 @@
 {% block title %} Tabela - Página {{ processos.number }} {% endblock %}
 <!-- Conteúdo -->
 {% block content%}
+<div class="container table-search p-0 mb-3 d-flex gap-2">
+  <form method="GET" class="col-10" id="search-form">
+    <div class="form-outline">
+      <input
+        type="text"
+        id="search"
+        class="form-control form-control-lg"
+        name="search"
+        value="{{ request.GET.search }}"
+      />
+      <label class="form-label" for="search">Informe o ID do advogado</label>
+    </div>
+  </form>
+  <button id="search-btn" class="btn btn-primary col-2">Gerar Relatório</button>
+</div>
+
+{% if processos %}
+<!-- Verifica se há processos -->
 <div class="table-responsive container process-table">
   <table class="table">
     <thead class="table-dark">
@@ -28,24 +46,35 @@
       {% endfor %}
     </tbody>
   </table>
+
+  <!-- Paginação -->
   <div class="pagination">
     <span class="step-links">
       <!-- Verifica se há uma página anterior -->
       {% if processos.has_previous %}
-      <a href="?page={{ processos.previous_page_number }}"
+      <a
+        href="?page={{ processos.previous_page_number }}{% if search %}&search={{ search }}{% endif %}"
         ><i class="fa fa-arrow-left"></i></a
       >{% endif %}
-      <!-- Mostra a página -->
-      <span class="current">
-        {{ processos.number }} de {{ processos.paginator.num_pages }}</span
+
+      <!-- Mostra a página (somente se houver mais de uma página) -->
+      {% if processos.paginator.num_pages > 1 %}
+      <span class="current"
+        >{{ processos.number }} de {{ processos.paginator.num_pages }}</span
       >
+      {% endif %}
+
       <!-- Verifica se há uma próxima página -->
       {% if processos.has_next %}
-      <a href="?page={{ processos.next_page_number }}"
+      <a
+        href="?page={{ processos.next_page_number }}{% if search %}&search={{ search }}{% endif %}"
         ><i class="fa fa-arrow-right"></i></a
       >{% endif %}
     </span>
   </div>
 </div>
 
-{% endblock %}
+{% else %}
+<!-- Caso não haja processos -->
+<p>Nenhum resultado encontrado para a pesquisa.</p>
+{% endif %} {% endblock %}
