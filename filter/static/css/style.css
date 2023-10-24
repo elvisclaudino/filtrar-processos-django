@@ -5,9 +5,27 @@
   font-family: "Poppins", sans-serif;
 }
 
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 94vh;
+}
+
+@media (max-height: 800px) {
+  .main-content {
+    height: 800px;
+  }
+}
 /* Tabela de processos */
 .table-dark {
   --mdb-table-bg: #003364;
+}
+
+.process-table {
+  border-radius: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 /* Paginação */
@@ -29,6 +47,12 @@
 .fa-arrow-right,
 .fa-arrow-left {
   color: #003364;
+}
+
+@media (max-width: 1200px) {
+  .process-table {
+    height: 80%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

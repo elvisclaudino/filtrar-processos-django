@@ -4,6 +4,12 @@
   --mdb-table-bg: #003364;
 }
 
+.process-table {
+  border-radius: 20px;
+  margin: 0;
+  padding: 0;
+}
+
 /* Paginação */
 
 .pagination {
@@ -24,4 +30,10 @@
 .fa-arrow-right,
 .fa-arrow-left {
   color: #003364;
+}
+
+@media (max-width: 1200px) {
+  .process-table {
+    height: 80%;
+  }
 }
