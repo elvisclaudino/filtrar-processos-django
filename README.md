@@ -15,7 +15,7 @@ A partir de uma base de dados, o programa lista todos os processos pelos quais o
 
 2. Criar a database utilizando o script do arquivo `escritorio.sql`
 
-![image](https://github.com/elvisclaudino/filtrar-processos-django/assets/102040112/f317930a-fcbc-462a-bb88-b59c504734cb)
+![image](https://github.com/elvisclaudino/filtrar-processos-django/assets/102040112/59ea44f5-dca2-4704-a8e0-8b4867fa5bb3)
 
 4. Acessar o diretorio e no terminal realizar as migrations
    
