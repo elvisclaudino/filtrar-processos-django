@@ -9,15 +9,15 @@ A partir de uma base de dados, o programa lista todos os processos pelos quais o
 
 # Roteiro para a execução:
 
-1. Criar uma conexão MySQL com `Hostname: 127.0.0.1` `Port: 3306` `Username: root` `password: (Não possui)`.
+1. Crie uma conexão MySQL com `Hostname: 127.0.0.1` `Port: 3306` `Username: root` `password: (Não possui)`.
    
 ![image](https://github.com/elvisclaudino/hash-table/assets/102040112/72d94052-337e-41c0-828d-b120e4c4aba7)
 
-2. Criar a database utilizando o script do arquivo `escritorio.sql`.
+2. Crie a database utilizando o script do arquivo `escritorio.sql`.
 
 ![image](https://github.com/elvisclaudino/filtrar-processos-django/assets/102040112/59ea44f5-dca2-4704-a8e0-8b4867fa5bb3)
 
-4. Acessar o diretorio e execute as migrations pelo terminal:
+3. Acesse o diretorio e execute as migrations pelo terminal:
    
 ```bash
 python .\manage.py makemigrations
