@@ -20,16 +20,16 @@ A partir de uma base de dados, o programa lista todos os processos pelos quais o
 4. Acessar o diretorio e no terminal realizar as migrations
    
 ```bash
-  processFilter> python .\manage.py makemigrations
+python .\manage.py makemigrations
 ```
 ```bash
-  processFilter> python .\manage.py migrate
+python .\manage.py migrate
 ```
 
 4. Ainda através do terminal iniciar o servidor
 
 ```bash
-  processFilter> python .\manage.py runserver
+python .\manage.py runserver
 ```
 
 5. Assim que iniciar o servidor, será exibida uma tabela com todos os processos contidos no banco de dados
