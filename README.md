@@ -13,7 +13,11 @@ A partir de uma base de dados, o programa lista todos os processos pelos quais o
    
 ![image](https://github.com/elvisclaudino/hash-table/assets/102040112/72d94052-337e-41c0-828d-b120e4c4aba7)
 
-2. Acessar o diretorio e no terminal realizar as migrations.
+2. Criar o database utilizando o script do arquivo `escritorio.sql`
+
+![image](https://github.com/elvisclaudino/filtrar-processos-django/assets/102040112/f317930a-fcbc-462a-bb88-b59c504734cb)
+
+4. Acessar o diretorio e no terminal realizar as migrations.
    
 ```bash
   processFilter> python .\manage.py makemigrations
@@ -22,17 +26,17 @@ A partir de uma base de dados, o programa lista todos os processos pelos quais o
   processFilter> python .\manage.py migrate
 ```
 
-3. Ainda através do terminal iniciar o servidor.
+4. Ainda através do terminal iniciar o servidor.
 
 ```bash
   processFilter> python .\manage.py runserver
 ```
 
-4. Assim que iniciar o servidor, será exibida uma tabela com todos os processos contidos no banco de dados.
+5. Assim que iniciar o servidor, será exibida uma tabela com todos os processos contidos no banco de dados.
 
 ![image](https://github.com/elvisclaudino/hash-table/assets/102040112/43f506af-28b6-45c7-9f80-881abdf05765)
 
-5. Através de um input o usuário pode digitar o ID de um advogado e gerar um relatório com todos os processos vinculados ao advogado selecionado.
+6. Através de um input o usuário pode digitar o ID de um advogado e gerar um relatório com todos os processos vinculados ao advogado selecionado.
 
 ![image](https://github.com/elvisclaudino/hash-table/assets/102040112/2294e2dd-9133-4e33-9aff-bc2b7f8ffbbd)
 
