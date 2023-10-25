@@ -14,9 +14,8 @@ class Pessoas(models.Model):
     def __str__(self):
         return self.nome
 
-
 class Processos(models.Model):
-    advogado = models.ForeignKey(Pessoas, on_delete=models.DO_NOTHING, related_name='advogado_processos', db_column='advogado_id') 
+    advogado = models.ForeignKey(Pessoas, on_delete=models.DO_NOTHING, related_name='advogado_processos', db_column='advogado_id')
     cliente = models.ForeignKey(Pessoas, on_delete=models.DO_NOTHING, related_name='cliente_processos', db_column='cliente_id')
     numero_processo = models.CharField(max_length=35)
     proximo_prazo = models.DateTimeField()

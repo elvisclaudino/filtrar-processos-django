@@ -1,9 +1,12 @@
 {% extends "base.html" %}
+
 <!-- Título -->
 {% block title %} Tabela - Página {{ processos.number }} {% endblock %}
+
 <!-- Conteúdo -->
 {% block content%}
 <div class="container table-search p-0 mb-3 d-flex gap-2">
+  <!-- Formulário de pesquisa -->
   <form method="GET" class="col-10" id="search-form">
     <div class="form-outline">
       <input
@@ -19,8 +22,8 @@
   <button id="search-btn" class="btn btn-primary col-2">Gerar Relatório</button>
 </div>
 
+<!-- Se houver processos gera uma tabela -->
 {% if processos %}
-<!-- Verifica se há processos -->
 <div class="table-responsive container process-table">
   <table class="table">
     <thead class="table-dark">
@@ -40,7 +43,6 @@
         <td>{{ processo.cliente.nome }}</td>
         <td>{{ processo.numero_processo }}</td>
         <td>{{ processo.proximo_prazo|date:"d/m/Y H:i" }}</td>
-        <!-- Formata a data -->
         <td>{{ processo.arquivo }}</td>
       </tr>
       {% endfor %}
@@ -74,7 +76,7 @@
   </div>
 </div>
 
-{% else %}
 <!-- Caso não haja processos -->
+{% else %}
 <p>Nenhum resultado encontrado para a pesquisa.</p>
 {% endif %} {% endblock %}
