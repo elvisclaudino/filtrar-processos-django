@@ -9,7 +9,7 @@ A partir de uma base de dados, o programa lista todos os processos pelos quais o
 
 # Requisitos pare execução da aplicação
 
-1. Criar uma conexão MySQL com `Hostname: 127.0.0.1` `Port: 3306` `Username: root` `password: (Não possui senha)`.
+1. Criar uma conexão MySQL com `Hostname: 127.0.0.1` `Port: 3306` `Username: root` `password: (Não possui)`.
    
 ![image](https://github.com/elvisclaudino/hash-table/assets/102040112/72d94052-337e-41c0-828d-b120e4c4aba7)
 
